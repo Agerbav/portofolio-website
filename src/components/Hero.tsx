@@ -44,6 +44,8 @@ const styles = StyleSheet.create({
     paddingTop: space.xl,
   },
   avatar: {
+    marginTop: 100,
+    marginBottom: 100,
     width: 340,
     height: 190,
     backgroundColor: color.card,
