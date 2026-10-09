@@ -46,8 +46,6 @@ export function NavBar() {
           })}
         </View>
       </View>
-
-      {/* Scalloped white bottom edge */}
     </View>
   );
 }
