@@ -17,6 +17,8 @@ export const projects: Detail[] = [
     year: 2026,
     tags: ['NestJS', 'Prisma', 'MariaDB', 'Microservices', 'JWT'],
     featured: true,
+    preview: require('@/assets/projects/wspeedrun/wspeedrun.gif'),
+    thumbnail: require('@/assets/projects/wspeedrun/wspeedrun.png'),
     status: 'School Project',
   },
   {
@@ -50,6 +52,8 @@ export const projects: Detail[] = [
     year: 2026,
     tags: ['Flutter', 'Express', 'MySQL', 'Provider', 'JWT'],
     featured: true,
+    thumbnail: require('@/assets/projects/gachamerch/gachamerch.png'),
+    preview: require('@/assets/projects/gachamerch/gachamerch.gif'),
     status: 'School Project',
   },
   {
