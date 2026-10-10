@@ -18,5 +18,5 @@ export type Work = {
   links?: { label: string; url: string }[];
   /** If true, shows on the home page preview */
   featured?: boolean;
-  status?: 'shipped' | 'wip' | 'archived';
+  status?: string;
 };
