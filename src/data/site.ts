@@ -2,7 +2,7 @@ export const site = {
   name: 'Vabregass',
   role: 'Programmer',
   location: 'Jakarta, Indonesia',
-  headline: "Hello There, I'm Vabregass",
+  headline: "Hello There, I'm Vabregass!",
   subhead:
     "I'm a Programmer from Jakarta, currently doing my bachelor's degree in BINUS.",
   about: [
