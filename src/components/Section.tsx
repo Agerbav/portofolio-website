@@ -8,6 +8,7 @@ type Props = {
   style?: ViewStyle;
   /** Vertical padding preset */
   pad?: 'sm' | 'md' | 'lg';
+  wide?: boolean;
 };
 
 const PAD: Record<NonNullable<Props['pad']>, number> = {
@@ -16,10 +17,18 @@ const PAD: Record<NonNullable<Props['pad']>, number> = {
   lg: space.xxl,
 };
 
-export function Section({ bg, children, style, pad = 'md' }: Props) {
+export function Section({ bg, children, style, pad = 'md', wide = false }: Props) {
   return (
     <View style={[styles.outer, { backgroundColor: bg }, style]}>
-      <View style={[styles.inner, { paddingVertical: PAD[pad] }]}>{children}</View>
+      <View
+        style={[
+          styles.inner,
+          wide && styles.innerWide,
+          { paddingVertical: PAD[pad] },
+        ]}
+      >
+        {children}
+      </View>
     </View>
   );
 }
@@ -33,5 +42,9 @@ const styles = StyleSheet.create({
     maxWidth: layout.maxWidth,
     alignSelf: 'center',
     paddingHorizontal: layout.pagePadding,
+  },
+  innerWide: {
+    maxWidth: layout.gridMaxWidth,
+    paddingHorizontal: layout.gridPadding,
   },
 });

@@ -13,7 +13,7 @@ export const color = {
   creativeBg: '#22d3ee',
   aboutBg: '#fef9c3',
   aboutText: '#1f2937',
-  card: '#d4d4d4',
+  card: '#ffffff',
   cardText: '#6b7280',
   text: '#ffffff',
   textDim: '#dbeafe',
@@ -39,7 +39,9 @@ export const radius = {
 
 export const layout = {
   maxWidth: 1200,
+  gridMaxWidth: 1440,
   pagePadding: 24,
+  gridPadding: 16,
   gridGap: 20,
 };
 

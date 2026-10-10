@@ -19,15 +19,14 @@ export default function Home() {
         <Hero />
       </View>
 
-      {/* Projects */}
-      <Section bg={color.projectsBg}>
+       {/* Projects */}
+      <Section bg={color.projectsBg} wide>
         <SectionHeader title="Projects" href="/projects" />
         <CardGrid items={featuredProjects(6)} />
       </Section>
 
-
       {/* Creative  */}
-      <Section bg={color.creativeBg}>
+      <Section bg={color.creativeBg} wide>
         <SectionHeader title="Creative" href="/creative" />
         <CardGrid items={featuredCreative(6)} />
       </Section>
