@@ -1,4 +1,4 @@
-import type { Work } from '../types/work';
+import type { Detail } from '../types/detail';
 
 /**
  * ────────────────────────────────────────────────────────────
@@ -7,7 +7,7 @@ import type { Work } from '../types/work';
  *  preview, and /work/<slug> all pick it up automatically.
  * ────────────────────────────────────────────────────────────
  */
-export const projects: Work[] = [
+export const projects: Detail[] = [
   {
     slug: 'wspeedrun',
     title: 'WSpeedrun',

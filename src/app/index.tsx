@@ -1,9 +1,9 @@
+import { CardGrid } from '@/components/CardGrid';
 import { Hero } from '@/components/Hero';
 import { Section } from '@/components/Section';
 import { SectionHeader } from '@/components/SectionHeader';
-import { WorkGrid } from '@/components/WorkGrid';
 import { color } from '@/constants/theme';
-import { featuredCreative, featuredProjects } from '@/utils/work';
+import { featuredCreative, featuredProjects } from '@/utils/detail';
 import { ScrollView, StyleSheet, View } from 'react-native';
 
 
@@ -22,14 +22,14 @@ export default function Home() {
       {/* Projects */}
       <Section bg={color.projectsBg}>
         <SectionHeader title="Projects" href="/projects" />
-        <WorkGrid items={featuredProjects(6)} />
+        <CardGrid items={featuredProjects(6)} />
       </Section>
 
 
       {/* Creative  */}
       <Section bg={color.creativeBg}>
         <SectionHeader title="Creative" href="/creative" />
-        <WorkGrid items={featuredCreative(6)} />
+        <CardGrid items={featuredCreative(6)} />
       </Section>
 
       {/* About */}

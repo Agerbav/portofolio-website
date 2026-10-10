@@ -1,5 +1,5 @@
 import { color, font, layout, space } from '@/constants/theme';
-import { allWorkSlugs, getWorkBySlug, isCreative } from '@/utils/work';
+import { allDetailSlugs, getDetailBySlug, isCreative } from '@/utils/detail';
 import { Image } from 'expo-image';
 import { Link, useLocalSearchParams } from 'expo-router';
 import {
@@ -11,14 +11,14 @@ import {
 } from 'react-native';
 
 export async function generateStaticParams() {
-  return allWorkSlugs().map((slug) => ({ slug }));
+  return allDetailSlugs().map((slug) => ({ slug }));
 }
 
-export default function WorkDetail() {
+export default function Detail() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
-  const work = getWorkBySlug(slug);
+  const detail = getDetailBySlug(slug);
 
-  if (!work) {
+  if (!detail) {
     return (
       <View style={styles.notFound}>
         <Text style={styles.notFoundTitle}>Not found</Text>
@@ -31,7 +31,7 @@ export default function WorkDetail() {
     );
   }
 
-  const creative = isCreative(work.slug);
+  const creative = isCreative(detail.slug);
   const bg = creative ? color.creativeBg : color.projectsBg;
   const backHref = creative ? '/creative' : '/projects';
   const backLabel = creative ? 'Creative' : 'Projects';
@@ -50,21 +50,21 @@ export default function WorkDetail() {
             </Pressable>
           </Link>
 
-          <Text style={styles.title}>{work.title}</Text>
-          {work.tagline ? <Text style={styles.tagline}>{work.tagline}</Text> : null}
+          <Text style={styles.title}>{detail.title}</Text>
+          {detail.tagline ? <Text style={styles.tagline}>{detail.tagline}</Text> : null}
 
           <View style={styles.metaRow}>
-            <Text style={styles.meta}>{work.year}</Text>
-            {work.status ? <Text style={styles.meta}>· {work.status}</Text> : null}
-            {work.tags?.length ? (
-              <Text style={styles.meta}>· {work.tags.join(', ')}</Text>
+            <Text style={styles.meta}>{detail.year}</Text>
+            {detail.status ? <Text style={styles.meta}>· {detail.status}</Text> : null}
+            {detail.tags?.length ? (
+              <Text style={styles.meta}>· {detail.tags.join(', ')}</Text>
             ) : null}
           </View>
 
           <View style={styles.hero}>
-            {work.thumbnail !== undefined ? (
+            {detail.thumbnail !== undefined ? (
               <Image
-                source={work.thumbnail}
+                source={detail.thumbnail}
                 style={StyleSheet.absoluteFill}
                 contentFit="cover"
                 transition={200}
@@ -74,13 +74,13 @@ export default function WorkDetail() {
             )}
           </View>
 
-          {work.description ? (
-            <Text style={styles.description}>{work.description}</Text>
+          {detail.description ? (
+            <Text style={styles.description}>{detail.description}</Text>
           ) : null}
 
-          {work.links?.length ? (
+          {detail.links?.length ? (
             <View style={styles.links}>
-              {work.links.map((l) => (
+              {detail.links.map((l) => (
                 <Link key={l.label} href={l.url as never} asChild>
                   <Pressable style={styles.linkBtn} hitSlop={6}>
                     <Text style={styles.linkText}>{l.label} ↗</Text>

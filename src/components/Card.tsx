@@ -1,30 +1,30 @@
 import { color, font, radius, space } from '@/constants/theme';
-import { Work } from '@/types/work';
+import { Detail } from '@/types/detail';
 import { Image } from 'expo-image';
 import { Link } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 type Props = {
-  work: Work;
+  detail: Detail;
   /** Text colour — white on blue/cyan, dark on yellow */
   titleColor?: string;
   taglineColor?: string;
 };
 
-export function WorkCard({
-  work,
+export function Card({
+  detail,
   titleColor = color.text,
   taglineColor = color.textDim,
 }: Props) {
-  const hasThumb = work.thumbnail !== undefined;
+  const hasThumb = detail.thumbnail !== undefined;
 
   return (
-    <Link href={{ pathname: '/work/[slug]', params: { slug: work.slug } }} asChild>
+    <Link href={{ pathname: '/detail/[slug]', params: { slug: detail.slug } }} asChild>
       <Pressable style={styles.wrap}>
         <View style={styles.thumb}>
           {hasThumb ? (
             <Image
-              source={work.thumbnail!}
+              source={detail.thumbnail!}
               style={StyleSheet.absoluteFill}
               contentFit="cover"
               transition={200}
@@ -36,14 +36,14 @@ export function WorkCard({
 
         <View style={styles.meta}>
           <Text style={[styles.title, { color: titleColor }]} numberOfLines={1}>
-            {work.title}
+            {detail.title}
           </Text>
-          {work.tagline ? (
+          {detail.tagline ? (
             <Text
               style={[styles.tagline, { color: taglineColor }]}
               numberOfLines={2}
             >
-              {work.tagline}
+              {detail.tagline}
             </Text>
           ) : null}
         </View>

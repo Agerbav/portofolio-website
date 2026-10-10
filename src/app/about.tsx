@@ -48,23 +48,6 @@ export default function AboutPage() {
           ))}
         </View>
 
-        {/* Decorative arrows, matching the mockup's bottom-right */}
-        {/* <View style={styles.decor}>
-          <Svg width={120} height={80} viewBox="0 0 120 80">
-            <Path
-              d="M20 80 L20 40 L35 55 L50 40 L50 80 Z"
-              fill="rgba(34,211,238,0.55)"
-            />
-            <Path
-              d="M70 80 L70 25 L88 43 L106 25 L106 80 Z"
-              fill="rgba(34,211,238,0.85)"
-            />
-            <Path
-              d="M98 68 Q110 70 116 78 Q108 80 100 78 Z"
-              fill="rgba(37,99,235,0.9)"
-            />
-          </Svg>
-        </View> */}
       </View>
     </ScrollView>
   );

@@ -3,7 +3,7 @@
  * Add a new item by appending one object to src/data/projects.ts or
  * src/data/creative.ts — no component edits required.
  */
-export type Work = {
+export type Detail = {
   /** URL-safe, unique. Becomes /work/<slug> */
   slug: string;
   title: string;

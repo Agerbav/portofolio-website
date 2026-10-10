@@ -1,14 +1,14 @@
 import { layout } from '@/constants/theme';
-import type { Work } from '@/types/work';
+import type { Detail } from '@/types/detail';
 import { StyleSheet, useWindowDimensions, View } from 'react-native';
-import { WorkCard } from './WorkCard';
+import { Card } from './Card';
 
 type Props = {
-  items: readonly Work[];
+  items: readonly Detail[];
   gap?: number;
 };
 
-export function WorkGrid({ items, gap = layout.gridGap }: Props) {
+export function CardGrid({ items, gap = layout.gridGap }: Props) {
   const { width } = useWindowDimensions();
   const w = width || 1024;
 
@@ -22,9 +22,9 @@ export function WorkGrid({ items, gap = layout.gridGap }: Props) {
 
   return (
     <View style={[styles.grid, { gap }]}>
-      {items.map((work) => (
-        <View key={work.slug} style={{ width: itemW }}>
-          <WorkCard work={work} />
+      {items.map((detail) => (
+        <View key={detail.slug} style={{ width: itemW }}>
+          <Card detail={detail} />
         </View>
       ))}
     </View>

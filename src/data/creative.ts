@@ -1,11 +1,11 @@
-import type { Work } from '../types/work';
+import type { Detail } from '../types/detail';
 
 /**
  * Same shape as projects.ts — but a separate list, because
  * the Creative section is a different collection visually
  * and conceptually. Add a piece by appending one object.
  */
-export const creative: Work[] = [
+export const creative: Detail[] = [
   {
     slug: 'poster-series-01',
     title: 'Poster Series 01',

@@ -1,6 +1,6 @@
+import { CardGrid } from '@/components/CardGrid';
 import { Section } from '@/components/Section';
 import { SectionHeader } from '@/components/SectionHeader';
-import { WorkGrid } from '@/components/WorkGrid';
 import { color } from '@/constants/theme';
 import { creative } from '@/data/creative';
 import { ScrollView, StyleSheet } from 'react-native';
@@ -14,7 +14,7 @@ export default function CreativePage() {
     >
       <Section bg={color.creativeBg} pad="lg">
         <SectionHeader title="Creative" />
-        <WorkGrid items={creative} />
+        <CardGrid items={creative} />
       </Section>
     </ScrollView>
   );
