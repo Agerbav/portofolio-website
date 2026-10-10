@@ -13,6 +13,7 @@ export type Detail = {
   description?: string;
   /** Remote URL string, or a `require('...')` number for local assets */
   thumbnail?: string | number;
+  preview?: string | number;
   year: number;
   tags?: string[];
   links?: { label: string; url: string }[];
