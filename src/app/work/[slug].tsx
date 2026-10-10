@@ -10,10 +10,6 @@ import {
   View,
 } from 'react-native';
 
-/**
- * Static export: tells expo-router which slugs to pre-render
- * when you run `expo export --platform web`.
- */
 export async function generateStaticParams() {
   return allWorkSlugs().map((slug) => ({ slug }));
 }
@@ -47,51 +43,53 @@ export default function WorkDetail() {
       showsVerticalScrollIndicator={false}
     >
       <View style={styles.inner}>
-        <Link href={backHref} asChild>
-          <Pressable hitSlop={8} style={styles.back}>
-            <Text style={styles.backText}>← {backLabel}</Text>
-          </Pressable>
-        </Link>
+        <View style={styles.column}>
+          <Link href={backHref} asChild>
+            <Pressable hitSlop={8} style={styles.back}>
+              <Text style={styles.backText}>← {backLabel}</Text>
+            </Pressable>
+          </Link>
 
-        <Text style={styles.title}>{work.title}</Text>
-        {work.tagline ? <Text style={styles.tagline}>{work.tagline}</Text> : null}
+          <Text style={styles.title}>{work.title}</Text>
+          {work.tagline ? <Text style={styles.tagline}>{work.tagline}</Text> : null}
 
-        <View style={styles.metaRow}>
-          <Text style={styles.meta}>{work.year}</Text>
-          {work.status ? <Text style={styles.meta}>· {work.status}</Text> : null}
-          {work.tags?.length ? (
-            <Text style={styles.meta}>· {work.tags.join(', ')}</Text>
+          <View style={styles.metaRow}>
+            <Text style={styles.meta}>{work.year}</Text>
+            {work.status ? <Text style={styles.meta}>· {work.status}</Text> : null}
+            {work.tags?.length ? (
+              <Text style={styles.meta}>· {work.tags.join(', ')}</Text>
+            ) : null}
+          </View>
+
+          <View style={styles.hero}>
+            {work.thumbnail !== undefined ? (
+              <Image
+                source={work.thumbnail}
+                style={StyleSheet.absoluteFill}
+                contentFit="cover"
+                transition={200}
+              />
+            ) : (
+              <View style={[StyleSheet.absoluteFill, styles.heroPlaceholder]} />
+            )}
+          </View>
+
+          {work.description ? (
+            <Text style={styles.description}>{work.description}</Text>
+          ) : null}
+
+          {work.links?.length ? (
+            <View style={styles.links}>
+              {work.links.map((l) => (
+                <Link key={l.label} href={l.url as never} asChild>
+                  <Pressable style={styles.linkBtn} hitSlop={6}>
+                    <Text style={styles.linkText}>{l.label} ↗</Text>
+                  </Pressable>
+                </Link>
+              ))}
+            </View>
           ) : null}
         </View>
-
-        <View style={styles.hero}>
-          {work.thumbnail !== undefined ? (
-            <Image
-              source={work.thumbnail}
-              style={StyleSheet.absoluteFill}
-              contentFit="cover"
-              transition={200}
-            />
-          ) : (
-            <View style={[StyleSheet.absoluteFill, styles.heroPlaceholder]} />
-          )}
-        </View>
-
-        {work.description ? (
-          <Text style={styles.description}>{work.description}</Text>
-        ) : null}
-
-        {work.links?.length ? (
-          <View style={styles.links}>
-            {work.links.map((l) => (
-              <Link key={l.label} href={l.url as never} asChild>
-                <Pressable style={styles.linkBtn} hitSlop={6}>
-                  <Text style={styles.linkText}>{l.label} ↗</Text>
-                </Pressable>
-              </Link>
-            ))}
-          </View>
-        ) : null}
       </View>
     </ScrollView>
   );
@@ -107,6 +105,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: layout.pagePadding,
     paddingTop: space.xl,
     paddingBottom: space.xxl,
+  },
+  column: {
+    width: '100%',
+    maxWidth: 720,
+    alignSelf: 'center',
   },
   back: { alignSelf: 'flex-start' },
   backText: {
@@ -127,7 +130,6 @@ const styles = StyleSheet.create({
     color: color.textDim,
     fontSize: 20,
     lineHeight: 28,
-    maxWidth: 720,
   },
   metaRow: {
     flexDirection: 'row',
@@ -157,7 +159,7 @@ const styles = StyleSheet.create({
     color: color.text,
     fontSize: 17,
     lineHeight: 28,
-    maxWidth: 720,
+    textAlign: 'left',
   },
   links: {
     flexDirection: 'row',
