@@ -60,6 +60,7 @@ export function Section({
 const styles = StyleSheet.create({
   outer: {
     width: '100%',
+    overflow: 'hidden',
   },
   inner: {
     width: '100%',
