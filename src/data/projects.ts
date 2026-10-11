@@ -30,6 +30,8 @@ export const projects: Detail[] = [
     year: 2026,
     tags: ['Flutter', 'Express', 'Prisma', 'MySQL', 'Riverpod'],
     featured: true,
+    thumbnail: require('@/assets/projects/mediavault/mediavault.png'),
+    preview: require('@/assets/projects/mediavault/mediavault.gif'),
     status: 'School Project',
   },
   {
@@ -41,6 +43,8 @@ export const projects: Detail[] = [
     year: 2026,
     tags: ['HTML', 'CSS', 'Vanilla JS'],
     featured: true,
+    thumbnail: require('@/assets/projects/mrcoffee/mrcoffee.png'),
+    preview: require('@/assets/projects/mrcoffee/mrcoffee.gif'),
     status: 'School Project',
   },
   {
@@ -76,6 +80,8 @@ export const projects: Detail[] = [
     year: 2026,
     tags: ['NestJS', 'Next.js', 'Socket.io', 'TypeScript', 'Zustand'],
     featured: true,
+    thumbnail: require('@/assets/projects/playhub/playhub.png'),
+    preview: require('@/assets/projects/playhub/playhub.gif'),
     status: 'School Project',
   },
 ];
