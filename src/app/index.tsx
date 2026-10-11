@@ -26,7 +26,7 @@ export default function Home() {
         bg={color.projectsBg} 
         wide
         decor={['cloud', 'bird']}
-        decorCount={20}
+        decorCount={15}
         >
         <SectionHeader title="Projects" href="/projects" />
         <CardGrid items={featuredProjects(6)} />

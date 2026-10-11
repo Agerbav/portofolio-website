@@ -16,7 +16,7 @@ export default function ProjectsPage() {
         bg={color.projectsBg} 
         pad="lg"
         decor={['cloud', 'bird']}
-        decorCount={25}
+        decorCount={15}
         >
         <SectionHeader title="Projects" />
         <CardGrid items={projects} maxRows={0} />
