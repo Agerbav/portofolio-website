@@ -1,4 +1,6 @@
+import { DecorField } from '@/components/Decor';
 import { color, font, layout, space } from '@/constants/theme';
+import { DecorName } from '@/types/decor';
 import { allDetailSlugs, getDetailBySlug, isCreative } from '@/utils/detail';
 import { Image } from 'expo-image';
 import { Link, useLocalSearchParams } from 'expo-router';
@@ -36,12 +38,16 @@ export default function Detail() {
   const backHref = creative ? '/creative' : '/projects';
   const backLabel = creative ? 'Creative' : 'Projects';
 
+  const decorItems: readonly DecorName[] = creative ? ['wave'] : ['cloud', 'bird'];
+
   return (
     <ScrollView
       style={[styles.scroll, { backgroundColor: bg }]}
       contentContainerStyle={styles.content}
       showsVerticalScrollIndicator={false}
     >
+      <DecorField items={decorItems} count={7}/>
+      
       <View style={styles.inner}>
         <View style={styles.column}>
           <Link href={backHref} asChild>

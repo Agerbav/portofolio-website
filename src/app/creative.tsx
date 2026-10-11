@@ -12,7 +12,12 @@ export default function CreativePage() {
       contentContainerStyle={styles.content}
       showsVerticalScrollIndicator={false}
     >
-      <Section bg={color.creativeBg} pad="lg">
+      <Section 
+        bg={color.creativeBg} 
+        pad="lg"
+        decor={['wave']}
+        decorCount={20}
+        >
         <SectionHeader title="Creative" />
         <CardGrid items={creative} maxRows={0} />
       </Section>

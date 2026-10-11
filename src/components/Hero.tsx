@@ -1,20 +1,47 @@
 import { color, font, space } from '@/constants/theme';
 import { Image } from 'expo-image';
+import { useEffect, useRef, useState } from 'react';
 import { StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { site } from '../data/site';
+
+const INTRO_MS = 3000;
 
 export function Hero() {
   const { width } = useWindowDimensions();
   const compact = width < 768;
 
+  const [looping, setLooping] = useState(false);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(
+    () => () => {
+      if (timer.current) clearTimeout(timer.current);
+    },
+    [],
+  );
+
+  const startLoop = () => {
+    if (timer.current || looping) return;
+    timer.current = setTimeout(() => {
+      timer.current = null;
+      setLooping(true);
+    }, INTRO_MS);
+  };
+
   return (
     <View style={[styles.wrap, compact && styles.wrapCompact]}>
       <View style={[styles.avatar, compact && styles.avatarCompact]}>
         <Image
-          source={require('@/assets/decor/raccoon.gif')}
+          key={looping ? 'loop' : 'intro'}
+          source={
+            looping
+              ? require('@/assets/decor/raccoon-loop.gif')
+              : require('@/assets/decor/raccoon.gif')
+          }
           style={StyleSheet.absoluteFill}
           contentFit="contain"
-          transition={200}
+          transition={0}
+          onLoad={looping ? undefined : startLoop}
         />
       </View>
 
@@ -24,6 +51,7 @@ export function Hero() {
       </View>
     </View>
   );
+
 }
 
 const styles = StyleSheet.create({
