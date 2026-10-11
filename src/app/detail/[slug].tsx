@@ -64,7 +64,7 @@ export default function Detail() {
           <View style={styles.hero}>
             {detail.thumbnail !== undefined ? (
               <Image
-                source={detail.thumbnail}
+                source={detail.preview}
                 style={StyleSheet.absoluteFill}
                 contentFit="cover"
                 transition={200}

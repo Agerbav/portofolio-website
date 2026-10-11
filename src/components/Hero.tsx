@@ -53,8 +53,10 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   avatarCompact: {
-    width: '100%',
+    marginTop: 0,
+    marginBottom: 0,
     height: 200,
+    alignSelf: 'center'
   },
   avatarPlaceholder: {
     flex: 1,
@@ -65,7 +67,8 @@ const styles = StyleSheet.create({
     gap: space.sm,
   },
   textCompact: {
-    width: '100%',
+    width: '80%',
+    alignSelf: 'center'
   },
   headline: {
     color: color.text,

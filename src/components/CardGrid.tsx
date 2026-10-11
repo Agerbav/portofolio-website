@@ -12,9 +12,14 @@ import { Card } from './Card';
 type Props = {
   items: readonly Detail[];
   gap?: number;
+  maxRows?: number;
 };
 
-export function CardGrid({ items, gap = layout.gridGap }: Props) {
+export function CardGrid({
+  items,
+  gap = layout.gridGap,
+  maxRows = 2,
+}: Props) {
   const { width: winW } = useWindowDimensions();
   const [measured, setMeasured] = useState(0);
 
@@ -32,9 +37,12 @@ export function CardGrid({ items, gap = layout.gridGap }: Props) {
   const columns = inner >= 900 ? 3 : inner >= 560 ? 2 : 1;
   const itemW = (inner - gap * (columns - 1)) / columns;
 
+  const visible =
+    maxRows > 0 ? items.slice(0, columns * maxRows) : items;
+
   return (
     <View style={[styles.grid, { gap }]} onLayout={onLayout}>
-      {items.map((detail) => (
+      {visible.map((detail) => (
         <View key={detail.slug} style={{ width: itemW }}>
           <Card detail={detail} />
         </View>
