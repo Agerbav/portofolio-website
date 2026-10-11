@@ -29,7 +29,7 @@ export const projects: Detail[] = [
       'Flutter app backed by an Express/Prisma API that normalizes TMDB, RAWG, OpenLibrary, and MusicBrainz into one catalog. A genre-mapping table cross-links media types, so "Because you like horror" recommends a movie, game, and book from the same mood — with every external item cached locally on first fetch.',
     year: 2026,
     tags: ['Flutter', 'Express', 'Prisma', 'MySQL', 'Riverpod'],
-    featured: false,
+    featured: true,
     thumbnail: require('@/assets/projects/mediavault/mediavault.png'),
     preview: require('@/assets/projects/mediavault/mediavault.gif'),
     status: 'School Project',
@@ -61,17 +61,6 @@ export const projects: Detail[] = [
     status: 'School Project',
   },
   {
-    slug: 'pm25-predictor',
-    title: 'PM2.5 Predictor',
-    tagline: 'Air quality prediction with an LLM-written explanation layer',
-    description:
-      'FastAPI endpoint serving a scikit-learn model that predicts PM2.5 from five pollutant readings, date, and monitoring station. A vanilla JS frontend collects the inputs, routes them through Gemini for JSON normalization, posts to the model, then sends the prediction back through Gemini to generate a plain-language health advisory in Indonesian.',
-    year: 2025,
-    tags: ['FastAPI', 'scikit-learn', 'JavaScript', 'Gemini API'],
-    featured: false,
-    status: 'School Project',
-  },
-  {
     slug: 'playhub',
     title: 'PlayHub',
     tagline: 'A GoF pattern catalogue disguised as a multiplayer game server',
@@ -82,6 +71,17 @@ export const projects: Detail[] = [
     featured: true,
     thumbnail: require('@/assets/projects/playhub/playhub.png'),
     preview: require('@/assets/projects/playhub/playhub.gif'),
+    status: 'School Project',
+  },
+  {
+    slug: 'pm25-predictor',
+    title: 'PM2.5 Predictor',
+    tagline: 'Air quality prediction with an LLM-written explanation layer',
+    description:
+      'FastAPI endpoint serving a scikit-learn model that predicts PM2.5 from five pollutant readings, date, and monitoring station. A vanilla JS frontend collects the inputs, routes them through Gemini for JSON normalization, posts to the model, then sends the prediction back through Gemini to generate a plain-language health advisory in Indonesian.',
+    year: 2025,
+    tags: ['FastAPI', 'scikit-learn', 'JavaScript', 'Gemini API'],
+    featured: true,
     status: 'School Project',
   },
 ];
