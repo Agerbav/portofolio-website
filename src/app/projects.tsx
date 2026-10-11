@@ -12,12 +12,13 @@ export default function ProjectsPage() {
       contentContainerStyle={styles.content}
       showsVerticalScrollIndicator={false}
     >
-      <Section 
-        bg={color.projectsBg} 
+      <Section
+        bg={color.projectsBg}
         pad="lg"
         decor={['cloud', 'bird']}
         decorCount={15}
-        >
+        style={{ flex: 1 }}
+      >
         <SectionHeader title="Projects" />
         <CardGrid items={projects} maxRows={0} />
       </Section>

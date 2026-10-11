@@ -17,6 +17,7 @@ export default function CreativePage() {
         pad="lg"
         decor={['wave']}
         decorCount={20}
+        style={{ flex: 1 }}
         >
         <SectionHeader title="Others" />
         <CardGrid items={creative} maxRows={0} />
