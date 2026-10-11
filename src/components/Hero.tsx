@@ -8,7 +8,8 @@ const INTRO_MS = 3000;
 
 export function Hero() {
   const { width } = useWindowDimensions();
-  const compact = width < 768;
+  const effectiveWidth = width || 1024;   
+  const compact = effectiveWidth < 1024; 
 
   const [looping, setLooping] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
