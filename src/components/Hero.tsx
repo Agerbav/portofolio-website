@@ -1,4 +1,5 @@
-import { color, font, radius, space } from '@/constants/theme';
+import { color, font, space } from '@/constants/theme';
+import { Image } from 'expo-image';
 import { StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { site } from '../data/site';
 
@@ -9,11 +10,12 @@ export function Hero() {
   return (
     <View style={[styles.wrap, compact && styles.wrapCompact]}>
       <View style={[styles.avatar, compact && styles.avatarCompact]}>
-        {/*
-          Drop a real photo here:
-          <Image source={require('../../assets/avatar.jpg')} style={StyleSheet.absoluteFill} contentFit="cover" />
-        */}
-        <View style={styles.avatarPlaceholder} />
+        <Image
+          source={require('@/assets/decor/raccoon.gif')}
+          style={StyleSheet.absoluteFill}
+          contentFit="contain"
+          transition={200}
+        />
       </View>
 
       <View style={[styles.text, compact && styles.textCompact]}>
@@ -46,11 +48,8 @@ const styles = StyleSheet.create({
   avatar: {
     marginTop: 100,
     marginBottom: 100,
-    width: 340,
-    height: 190,
-    backgroundColor: color.card,
-    borderRadius: radius.sm,
-    overflow: 'hidden',
+    width: 480,
+    height: 432,
   },
   avatarCompact: {
     marginTop: 0,
@@ -58,10 +57,7 @@ const styles = StyleSheet.create({
     height: 200,
     alignSelf: 'center'
   },
-  avatarPlaceholder: {
-    flex: 1,
-    backgroundColor: color.card,
-  },
+
   text: {
     flex: 1,
     gap: space.sm,
@@ -72,7 +68,7 @@ const styles = StyleSheet.create({
   },
   headline: {
     color: color.text,
-    fontSize: font.h3,
+    fontSize: font.h1,
     fontWeight: '800',
     letterSpacing: -0.2,
   },
