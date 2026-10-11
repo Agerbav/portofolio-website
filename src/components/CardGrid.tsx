@@ -1,6 +1,12 @@
 import { layout } from '@/constants/theme';
 import type { Detail } from '@/types/detail';
-import { StyleSheet, useWindowDimensions, View } from 'react-native';
+import { useState } from 'react';
+import {
+  StyleSheet,
+  useWindowDimensions,
+  View,
+  type LayoutChangeEvent,
+} from 'react-native';
 import { Card } from './Card';
 
 type Props = {
@@ -15,11 +21,19 @@ export function CardGrid({
   maxRows = 2,
 }: Props) {
   const { width: winW } = useWindowDimensions();
+  const [measured, setMeasured] = useState(0);
+
+  const onLayout = (e: LayoutChangeEvent) => {
+    const w = e.nativeEvent.layout.width;
+    if (w > 0 && Math.abs(w - measured) > 0.5) setMeasured(w);
+  };
+
   const vw = winW || layout.gridMaxWidth;
-  const inner = Math.max(
+  const fallbackInner = Math.max(
     200,
     Math.min(vw, layout.gridMaxWidth) - layout.gridPadding * 2,
   );
+  const inner = measured || fallbackInner;
 
   const columns = inner >= 900 ? 3 : inner >= 560 ? 2 : 1;
   const itemW = Math.floor((inner - gap * (columns - 1)) / columns);
@@ -27,7 +41,7 @@ export function CardGrid({
   const visible = maxRows > 0 ? items.slice(0, columns * maxRows) : items;
 
   return (
-    <View style={[styles.grid, { gap }]}>
+    <View style={[styles.grid, { gap }]} onLayout={onLayout}>
       {visible.map((detail) => (
         <View key={detail.slug} style={{ width: itemW }}>
           <Card detail={detail} />
