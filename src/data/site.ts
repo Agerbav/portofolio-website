@@ -11,8 +11,8 @@ export const site = {
     'When I\'m not shipping code, I make visual things: posters, small motion studies, and the occasional type experiment. That\'s what lives in the "Creative" section.',
   ],
   socials: [
-    { label: 'GitHub', url: 'https://github.com/vabregass' },
+    { label: 'GitHub', url: 'https://github.com/agerbav' },
     { label: 'LinkedIn', url: 'https://linkedin.com/in/vabregass' },
-    { label: 'Email', url: 'mailto:hello@vabregass.dev' },
+    { label: 'Email', url: 'mailto:vabregass118@gmail.com' },
   ],
 };
