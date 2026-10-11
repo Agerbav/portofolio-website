@@ -77,7 +77,7 @@ type Props = {
 export function DecorField({
   items,
   count = 8,
-  opacity = [0.35, 0.9],
+  opacity = [0.35, 0.6],
   size = [70, 180],
 }: Props) {
   const [box, setBox] = useState({ w: 0, h: 0 });
