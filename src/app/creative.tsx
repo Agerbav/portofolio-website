@@ -14,7 +14,7 @@ export default function CreativePage() {
     >
       <Section bg={color.creativeBg} pad="lg">
         <SectionHeader title="Creative" />
-        <CardGrid items={creative} />
+        <CardGrid items={creative} maxRows={0} />
       </Section>
     </ScrollView>
   );

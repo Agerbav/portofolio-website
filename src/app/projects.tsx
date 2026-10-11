@@ -14,7 +14,7 @@ export default function ProjectsPage() {
     >
       <Section bg={color.projectsBg} pad="lg">
         <SectionHeader title="Projects" />
-        <CardGrid items={projects} />
+        <CardGrid items={projects} maxRows={0} />
       </Section>
     </ScrollView>
   );
