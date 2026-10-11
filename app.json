@@ -35,6 +35,7 @@
       ]
     ],
     "experiments": {
+      "baseUrl": "/portofolio-website",
       "typedRoutes": true,
       "reactCompiler": true
     }
