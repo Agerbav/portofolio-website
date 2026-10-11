@@ -26,7 +26,7 @@ export default function Home() {
         bg={color.projectsBg} 
         wide
         decor={['cloud', 'bird']}
-        decorCount={15}
+        decorCount={7}
         >
         <SectionHeader title="Projects" href="/projects" />
         <CardGrid items={featuredProjects(6)} />
@@ -37,9 +37,9 @@ export default function Home() {
         bg={color.creativeBg} 
         wide
         decor={["wave"]} 
-        decorCount={10}
+        decorCount={7}
         >
-        <SectionHeader title="Creative" href="/creative" />
+        <SectionHeader title="Others" href="/creative" />
         <CardGrid items={featuredCreative(6)} />
       </Section>
 
@@ -48,7 +48,7 @@ export default function Home() {
         bg={color.aboutBg}  
         pad="lg"
         decor={['seagull', 'castle']}
-        decorCount={8}
+        decorCount={7}
         >
         <View style={styles.aboutSpacer} />
       </Section>

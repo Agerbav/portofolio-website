@@ -36,7 +36,7 @@ export default function Detail() {
   const creative = isCreative(detail.slug);
   const bg = creative ? color.creativeBg : color.projectsBg;
   const backHref = creative ? '/creative' : '/projects';
-  const backLabel = creative ? 'Creative' : 'Projects';
+  const backLabel = creative ? 'Others' : 'Projects';
 
   const decorItems: readonly DecorName[] = creative ? ['wave'] : ['cloud', 'bird'];
 

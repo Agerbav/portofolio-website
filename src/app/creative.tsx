@@ -18,7 +18,7 @@ export default function CreativePage() {
         decor={['wave']}
         decorCount={20}
         >
-        <SectionHeader title="Creative" />
+        <SectionHeader title="Others" />
         <CardGrid items={creative} maxRows={0} />
       </Section>
     </ScrollView>

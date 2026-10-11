@@ -10,7 +10,7 @@ import {
 
 const LINKS = [
   { href: '/projects', label: 'Projects' },
-  { href: '/creative', label: 'Creative' },
+  { href: '/creative', label: 'Others' },
   { href: '/about', label: 'About' },
 ] as const;
 
