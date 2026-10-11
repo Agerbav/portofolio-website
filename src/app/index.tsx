@@ -1,4 +1,5 @@
 import { CardGrid } from '@/components/CardGrid';
+import { DecorField } from '@/components/Decor';
 import { Hero } from '@/components/Hero';
 import { Section } from '@/components/Section';
 import { SectionHeader } from '@/components/SectionHeader';
@@ -16,23 +17,39 @@ export default function Home() {
     >
       {/* Hero Section */}
       <View style={styles.heroBand}>
+        <DecorField items={["star"]} count={7}/>
         <Hero />
       </View>
 
        {/* Projects */}
-      <Section bg={color.projectsBg} wide>
+      <Section 
+        bg={color.projectsBg} 
+        wide
+        decor={['cloud', 'bird']}
+        decorCount={20}
+        >
         <SectionHeader title="Projects" href="/projects" />
         <CardGrid items={featuredProjects(6)} />
       </Section>
 
       {/* Creative  */}
-      <Section bg={color.creativeBg} wide>
+      <Section 
+        bg={color.creativeBg} 
+        wide
+        decor={["wave"]} 
+        decorCount={10}
+        >
         <SectionHeader title="Creative" href="/creative" />
         <CardGrid items={featuredCreative(6)} />
       </Section>
 
       {/* About */}
-      <Section bg={color.aboutBg} pad="lg">
+      <Section 
+        bg={color.aboutBg}  
+        pad="lg"
+        decor={['seagull', 'castle']}
+        decorCount={8}
+        >
         <View style={styles.aboutSpacer} />
       </Section>
     </ScrollView>

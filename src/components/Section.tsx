@@ -1,14 +1,20 @@
+// src/components/Section.tsx
 import { layout, space } from '@/constants/theme';
+import type { DecorSpec } from '@/types/decor';
 import type { ReactNode } from 'react';
 import { StyleSheet, View, type ViewStyle } from 'react-native';
+import { DecorField } from './Decor';
 
 type Props = {
   bg: string;
   children: ReactNode;
   style?: ViewStyle;
-  /** Vertical padding preset */
   pad?: 'sm' | 'md' | 'lg';
   wide?: boolean;
+  decor?: readonly DecorSpec[];
+  decorCount?: number;
+  decorOpacity?: [number, number];
+  decorSize?: [number, number];
 };
 
 const PAD: Record<NonNullable<Props['pad']>, number> = {
@@ -17,9 +23,27 @@ const PAD: Record<NonNullable<Props['pad']>, number> = {
   lg: space.xxl,
 };
 
-export function Section({ bg, children, style, pad = 'md', wide = false }: Props) {
+export function Section({
+  bg,
+  children,
+  style,
+  pad = 'md',
+  wide = false,
+  decor,
+  decorCount = 8,
+  decorOpacity,
+  decorSize,
+}: Props) {
   return (
     <View style={[styles.outer, { backgroundColor: bg }, style]}>
+      {decor?.length ? (
+        <DecorField
+          items={decor}
+          count={decorCount}
+          opacity={decorOpacity}
+          size={decorSize}
+        />
+      ) : null}
       <View
         style={[
           styles.inner,
