@@ -17,7 +17,7 @@ export default function Home() {
     >
       {/* Hero Section */}
       <View style={styles.heroBand}>
-        <DecorField items={["star"]} count={6}/>
+        <DecorField items={["star"]} count={7}/>
         <Hero />
       </View>
 
