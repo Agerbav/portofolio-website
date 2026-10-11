@@ -17,8 +17,7 @@ const LINKS = [
 export function NavBar() {
   const pathname = usePathname();
   const { width } = useWindowDimensions();
-  const compact = width < 640;
-
+  const compact = (width || 1024) < 640;
   return (
     <View style={styles.wrap}>
       <View style={[styles.bar, compact && styles.barCompact]}>

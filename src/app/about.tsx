@@ -13,7 +13,7 @@ import {
 
 export default function AboutPage() {
   const { width } = useWindowDimensions();
-  const compact = width < 720;
+  const compact = (width || 1024) < 720;
 
   return (
     <ScrollView
