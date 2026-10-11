@@ -55,7 +55,7 @@ export const projects: Detail[] = [
       'Flutter storefront over an Express/MySQL API. Email-password and Google OAuth sign-in, role-gated admin CRUD with image upload, and a checkout that locks weapon rows with SELECT ... FOR UPDATE before decrementing stock, so concurrent orders can\'t oversell. The server self-migrates an older schema on boot, converting a flat weapons.type string into a categories FK.',
     year: 2026,
     tags: ['Flutter', 'Express', 'MySQL', 'Provider', 'JWT'],
-    featured: false,
+    featured: true,
     thumbnail: require('@/assets/projects/gachamerch/gachamerch.png'),
     preview: require('@/assets/projects/gachamerch/gachamerch.gif'),
     status: 'School Project',
