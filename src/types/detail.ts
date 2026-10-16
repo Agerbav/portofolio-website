@@ -1,3 +1,5 @@
+import { LinkIconName } from "@/components/LinkIcon";
+
 /**
  * One shared shape for BOTH the Projects grid and the Creative grid.
  * Add a new item by appending one object to src/data/projects.ts or
@@ -16,7 +18,7 @@ export type Detail = {
   preview?: string | number;
   year: number;
   tags?: string[];
-  links?: { label: string; url: string }[];
+  links?: { label: string; url: string; icon?: LinkIconName }[];
   /** If true, shows on the home page preview */
   featured?: boolean;
   status?: string;

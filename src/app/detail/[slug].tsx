@@ -1,4 +1,5 @@
 import { DecorField } from '@/components/Decor';
+import { iconForLink, LinkIcon } from '@/components/LinkIcon';
 import { color, font, layout, space } from '@/constants/theme';
 import { DecorName } from '@/types/decor';
 import { allDetailSlugs, getDetailBySlug, isCreative } from '@/utils/detail';
@@ -68,7 +69,7 @@ export default function Detail() {
           </View>
 
           <View style={styles.hero}>
-            {detail.thumbnail !== undefined ? (
+            {detail.preview !== undefined ? (
               <Image
                 source={detail.preview}
                 style={StyleSheet.absoluteFill}
@@ -89,7 +90,8 @@ export default function Detail() {
               {detail.links.map((l) => (
                 <Link key={l.label} href={l.url as never} asChild>
                   <Pressable style={styles.linkBtn} hitSlop={6}>
-                    <Text style={styles.linkText}>{l.label} ↗</Text>
+                    <LinkIcon name={iconForLink(l)} size={16} color="#1f2937" />
+                    <Text style={styles.linkText}>{l.label}</Text>
                   </Pressable>
                 </Link>
               ))}
@@ -174,6 +176,9 @@ const styles = StyleSheet.create({
     marginTop: space.xl,
   },
   linkBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
     paddingHorizontal: space.lg,
     paddingVertical: 12,
     borderRadius: 999,

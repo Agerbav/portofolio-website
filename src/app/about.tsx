@@ -1,4 +1,5 @@
 import { DecorField } from '@/components/Decor';
+import { iconForLink, LinkIcon } from '@/components/LinkIcon';
 import { color, font, layout, space } from '@/constants/theme';
 import { site } from '@/data/site';
 import { Link } from 'expo-router';
@@ -21,8 +22,8 @@ export default function AboutPage() {
       contentContainerStyle={styles.content}
       showsVerticalScrollIndicator={false}
     >
-      <DecorField items={["castle", 'seagull']} count={12}/>
-      
+      <DecorField items={["castle", 'seagull']} count={12} />
+
       <View style={styles.inner}>
         <Text style={styles.kicker}>About</Text>
         <Text style={[styles.h1, compact && styles.h1Compact]}>
@@ -45,7 +46,8 @@ export default function AboutPage() {
           {site.socials.map((s) => (
             <Link key={s.label} href={s.url as never} asChild>
               <Pressable style={styles.socialBtn} hitSlop={6}>
-                <Text style={styles.socialText}>{s.label} ↗</Text>
+                <LinkIcon name={iconForLink(s)} size={16} color="#1f2937" />
+                {/* <Text style={styles.socialText}>{s.label}</Text> */}
               </Pressable>
             </Link>
           ))}
