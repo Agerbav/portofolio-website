@@ -22,6 +22,7 @@ export const projects: Detail[] = [
     links: [{
       label: "Github", 
       url: "https://github.com/Agerbav/wspeedrun"
+    }],
     status: 'School Project',
   },
   {
