@@ -19,6 +19,9 @@ export const projects: Detail[] = [
     featured: true,
     preview: require('@/assets/projects/wspeedrun/wspeedrun.gif'),
     thumbnail: require('@/assets/projects/wspeedrun/wspeedrun.png'),
+    links: [{
+      label: "Github", 
+      url: "https://github.com/Agerbav/wspeedrun"
     status: 'School Project',
   },
   {
@@ -32,6 +35,10 @@ export const projects: Detail[] = [
     featured: true,
     thumbnail: require('@/assets/projects/mediavault/mediavault.png'),
     preview: require('@/assets/projects/mediavault/mediavault.gif'),
+    links: [{
+      label: "Github", 
+      url: "https://github.com/Agerbav/mediaVault"
+    }],
     status: 'School Project',
   },
   {
@@ -45,6 +52,10 @@ export const projects: Detail[] = [
     featured: true,
     thumbnail: require('@/assets/projects/mrcoffee/mrcoffee.png'),
     preview: require('@/assets/projects/mrcoffee/mrcoffee.gif'),
+    links: [{
+      label: "Github", 
+      url: "https://github.com/Agerbav/mrcoffee"
+    }],
     status: 'School Project',
   },
   {
@@ -58,6 +69,10 @@ export const projects: Detail[] = [
     featured: true,
     thumbnail: require('@/assets/projects/gachamerch/gachamerch.png'),
     preview: require('@/assets/projects/gachamerch/gachamerch.gif'),
+    links: [{
+      label: "Github", 
+      url: "https://github.com/Agerbav/gacha_merch"
+    }],
     status: 'School Project',
   },
   {
@@ -71,6 +86,10 @@ export const projects: Detail[] = [
     featured: true,
     thumbnail: require('@/assets/projects/playhub/playhub.png'),
     preview: require('@/assets/projects/playhub/playhub.gif'),
+    links: [{
+      label: "Github", 
+      url: "https://github.com/Jessssswill/PlayHub-SoftwareArchitecture"
+    }],
     status: 'School Project',
   },
   {
@@ -81,7 +100,28 @@ export const projects: Detail[] = [
       'FastAPI endpoint serving a scikit-learn model that predicts PM2.5 from five pollutant readings, date, and monitoring station. A vanilla JS frontend collects the inputs, routes them through Gemini for JSON normalization, posts to the model, then sends the prediction back through Gemini to generate a plain-language health advisory in Indonesian.',
     year: 2025,
     tags: ['FastAPI', 'scikit-learn', 'JavaScript', 'Gemini API'],
+    featured: false,
+    links: [{
+      label: "Github", 
+      url: "https://github.com/Agerbav/pm2.5-Predictor"
+    }],
+    status: 'School Project',
+  },
+    {
+    slug: 'letsmeet',
+    title: 'LetsMeet',
+    tagline: 'AI-powered sponsor matching for student organizations and corporations',
+    description:
+      'Express + TypeScript API backed by Prisma over PostgreSQL, where organizations publish events with tiered sponsorship packages and corporations browse them, with both sides ranked by Gemini-generated fit scores. The matching service prompts Gemini with structured JSON schemas to score corporation-event and corporation-organization pairs, persisting a score and short reasoning for each, while a React/Vite frontend serves separate organization and corporation portals with dashboards, an event workspace split into AI matches and a partnership inbox, and score-filtered corporation discovery.',
+    year: 2026,
+    tags: ['TypeScript', 'React', 'Express', 'Prisma', 'PostgreSQL', 'Gemini API', 'Docker'],
     featured: true,
+    thumbnail: require('@/assets/projects/letsmeet/letsmeet.png'),
+    preview: require('@/assets/projects/letsmeet/letsmeet.gif'),
+    links: [{
+      label: "Github", 
+      url: "https://github.com/jeremzhg/LetsMeet"
+    }],
     status: 'School Project',
   },
 ];
