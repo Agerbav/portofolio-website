@@ -17,7 +17,6 @@ export const projects: Detail[] = [
     year: 2026,
     tags: ["NestJS", "Prisma", "MariaDB", "Microservices", "JWT"],
     featured: true,
-<<<<<<< HEAD
     preview: require('@/assets/projects/wspeedrun/wspeedrun.gif'),
     thumbnail: require('@/assets/projects/wspeedrun/wspeedrun.png'),
     links: [{
@@ -25,11 +24,6 @@ export const projects: Detail[] = [
       url: "https://github.com/Agerbav/wspeedrun"
     }],
     status: 'School Project',
-=======
-    preview: require("@/assets/projects/wspeedrun/wspeedrun.gif"),
-    thumbnail: require("@/assets/projects/wspeedrun/wspeedrun.png"),
-    status: "School Project",
->>>>>>> a974a755c8cddce5f60960324f7430075ead9eda
   },
   {
     slug: "mediavault",
@@ -40,7 +34,6 @@ export const projects: Detail[] = [
     year: 2026,
     tags: ["Flutter", "Express", "Prisma", "MySQL", "Riverpod"],
     featured: true,
-<<<<<<< HEAD
     thumbnail: require('@/assets/projects/mediavault/mediavault.png'),
     preview: require('@/assets/projects/mediavault/mediavault.gif'),
     links: [{
@@ -48,11 +41,6 @@ export const projects: Detail[] = [
       url: "https://github.com/Agerbav/mediaVault"
     }],
     status: 'School Project',
-=======
-    thumbnail: require("@/assets/projects/mediavault/mediavault.png"),
-    preview: require("@/assets/projects/mediavault/mediavault.gif"),
-    status: "School Project",
->>>>>>> a974a755c8cddce5f60960324f7430075ead9eda
   },
   {
     slug: "mrcoffee",
@@ -63,7 +51,6 @@ export const projects: Detail[] = [
     year: 2026,
     tags: ["HTML", "CSS", "Vanilla JS"],
     featured: true,
-<<<<<<< HEAD
     thumbnail: require('@/assets/projects/mrcoffee/mrcoffee.png'),
     preview: require('@/assets/projects/mrcoffee/mrcoffee.gif'),
     links: [{
@@ -71,11 +58,6 @@ export const projects: Detail[] = [
       url: "https://github.com/Agerbav/mrcoffee"
     }],
     status: 'School Project',
-=======
-    thumbnail: require("@/assets/projects/mrcoffee/mrcoffee.png"),
-    preview: require("@/assets/projects/mrcoffee/mrcoffee.gif"),
-    status: "School Project",
->>>>>>> a974a755c8cddce5f60960324f7430075ead9eda
   },
   {
     slug: "gacha-merch",
@@ -86,7 +68,6 @@ export const projects: Detail[] = [
     year: 2026,
     tags: ["Flutter", "Express", "MySQL", "Provider", "JWT"],
     featured: true,
-<<<<<<< HEAD
     thumbnail: require('@/assets/projects/gachamerch/gachamerch.png'),
     preview: require('@/assets/projects/gachamerch/gachamerch.gif'),
     links: [{
@@ -94,11 +75,6 @@ export const projects: Detail[] = [
       url: "https://github.com/Agerbav/gacha_merch"
     }],
     status: 'School Project',
-=======
-    thumbnail: require("@/assets/projects/gachamerch/gachamerch.png"),
-    preview: require("@/assets/projects/gachamerch/gachamerch.gif"),
-    status: "School Project",
->>>>>>> a974a755c8cddce5f60960324f7430075ead9eda
   },
   {
     slug: "playhub",
@@ -109,7 +85,6 @@ export const projects: Detail[] = [
     year: 2026,
     tags: ["NestJS", "Next.js", "Socket.io", "TypeScript", "Zustand"],
     featured: true,
-<<<<<<< HEAD
     thumbnail: require('@/assets/projects/playhub/playhub.png'),
     preview: require('@/assets/projects/playhub/playhub.gif'),
     links: [{
@@ -117,11 +92,6 @@ export const projects: Detail[] = [
       url: "https://github.com/Jessssswill/PlayHub-SoftwareArchitecture"
     }],
     status: 'School Project',
-=======
-    thumbnail: require("@/assets/projects/playhub/playhub.png"),
-    preview: require("@/assets/projects/playhub/playhub.gif"),
-    status: "School Project",
->>>>>>> a974a755c8cddce5f60960324f7430075ead9eda
   },
   {
     slug: "pm25-predictor",
@@ -130,7 +100,6 @@ export const projects: Detail[] = [
     description:
       "FastAPI endpoint serving a scikit-learn model that predicts PM2.5 from five pollutant readings, date, and monitoring station. A vanilla JS frontend collects the inputs, routes them through Gemini for JSON normalization, posts to the model, then sends the prediction back through Gemini to generate a plain-language health advisory in Indonesian.",
     year: 2025,
-<<<<<<< HEAD
     tags: ['FastAPI', 'scikit-learn', 'JavaScript', 'Gemini API'],
     featured: false,
     links: [{
@@ -155,23 +124,5 @@ export const projects: Detail[] = [
       url: "https://github.com/jeremzhg/LetsMeet"
     }],
     status: 'School Project',
-=======
-    tags: ["FastAPI", "scikit-learn", "JavaScript", "Gemini API"],
-    featured: true,
-    status: "School Project",
-  },
-  {
-    slug: "bncc",
-    title: "BNCC Project",
-    tagline: "Session-cart Laravel storefront with a role-gated admin panel",
-    description:
-      "Laravel 9 MVC e-commerce app where authenticated users browse a paginated, keyword-searchable item catalog, add products to a session-backed cart, and check out through an address form that stores the serialized cart as an invoice and decrements item stock. Admins (role_id 1) get a separate CRUD panel for items — create with image upload, update with category reassignment, and a delete confirmation page — all guarded by a custom MustAdmin middleware. Auth, roles, categories, and invoices are wired through Eloquent models, migrations, and seeders that ship ready-to-use admin and guest accounts, with Blade + Bootstrap 5 views for every page.",
-    year: 2025,
-    tags: ["Laravel", "PHP", "MySQL", "Blade", "Bootstrap"],
-    featured: false,
-    thumbnail: require("@/assets/projects/bncc/bncc.png"),
-    preview: require("@/assets/projects/bncc/bncc.gif"),
-    status: "School Project",
->>>>>>> a974a755c8cddce5f60960324f7430075ead9eda
   },
 ];
